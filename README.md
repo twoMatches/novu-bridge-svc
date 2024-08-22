@@ -1,6 +1,6 @@
-# Novu Bridge App
+# novu-bridge-svc
 
-This is a [Novu](https://novu.co/) bridge application bootstrapped with [`npx novu init`](https://www.npmjs.com/package/novu)
+This novu bridge microservice, as the name suggests acts as a bridge between running instance of novu and twoMatches notification specs in the form of workflows.
 
 ## Getting Started
 
@@ -8,24 +8,37 @@ To run the development server, run:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 By default, the [Next.js](https://nextjs.org/) server will start and your state can be synchronized with Novu Cloud via the Bridge Endpoint (default is `/api/novu`). Your server will by default run on [http://localhost:4000](http://localhost:4000).
 
-## Your first workflow
+## Directory structure
 
-Your first email workflow can be edited in `./app/novu/workflows.ts`. You can adjust your workflow to your liking.
-
-## Learn More
-
-To learn more about Novu, take a look at the following resources:
-
-- [Novu](https://novu.co/)
-
-You can check out [Novu GitHub repository](https://github.com/novuhq/novu) - your feedback and contributions are welcome!
+```
+.
+├── .github
+│   └── workflows
+│       └── novu.yml
+├── README.md
+├── app
+│   ├── api
+│   │   └── novu
+│   │       └── route.ts
+│   ├── novu
+│   │   ├── emails
+│   │   │   └── novu-onboarding-email.tsx
+│   │   └── workflows
+│   │       ├── index.ts
+│   │       └── welcome-onboarding-email
+│   │           ├── index.ts
+│   │           ├── schemas.ts
+│   │           ├── types.ts
+│   │           └── workflow.ts
+│   └── page.tsx
+├── next.config.mjs
+├── package-lock.json
+├── package.json
+├── postcss.config.cjs
+├── tailwind.config.ts
+└── tsconfig.json
+```
