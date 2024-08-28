@@ -3,3 +3,4 @@ export * from "./in-app-invitation";
 export * from "./in-app-product";
 export * from "./in-app-catalog";
 export * from "./in-app-sales";
+export * from "./invitation-email";
