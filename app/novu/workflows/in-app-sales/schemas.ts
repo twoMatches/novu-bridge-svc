@@ -10,4 +10,11 @@ export const salesPayloadSchema = z.object({
     z.literal("AGREEMENT"),
   ]),
   id: z.string(),
+  preview: z.string(),
+  fullName: z.string(),
+  body: z.string(),
+  salesPersonName: z.string(),
+  companyProfileSrc: z.string(),
+  companyName: z.string(),
+  href: z.string(),
 });
