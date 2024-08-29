@@ -11,6 +11,7 @@ export const inAppInvitation = workflow(
         body: payload.description,
         coverImgSrc: payload.coverImgSrc,
         ctaHref: payload.ctaHref,
+        type:payload.type,
       };
     });
 
