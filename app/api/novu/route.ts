@@ -5,7 +5,6 @@ import {
   inAppProduct,
   inAppCatalog,
   inAppPurchaseOrder,
-  invitationEmail,
 } from "../../novu/workflows";
 
 // the workflows collection can hold as many workflow definitions as you need
@@ -16,6 +15,5 @@ export const { GET, POST, OPTIONS } = serve({
     inAppProduct,
     inAppCatalog,
     inAppPurchaseOrder,
-    invitationEmail,
   ],
 });

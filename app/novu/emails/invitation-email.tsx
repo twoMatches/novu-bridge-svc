@@ -16,9 +16,9 @@ import {
   Tailwind,
   Text,
 } from "@react-email/components";
-import { InvitationEmailPayloadSchema } from "../workflows";
+import { InvitationPayloadSchema } from "../workflows";
 
-type InvitationEmailProps = InvitationEmailPayloadSchema;
+type InvitationEmailProps = InvitationPayloadSchema;
 
 
 export const InvitationEmail = ({
@@ -128,6 +128,6 @@ export const InvitationEmail = ({
 }
 export default InvitationEmail;
 
-export function renderInvitationEmail(payload: InvitationEmailPayloadSchema) {
+export function renderInvitationEmail(payload: InvitationPayloadSchema) {
   return render(<InvitationEmail{...payload} />)
 }

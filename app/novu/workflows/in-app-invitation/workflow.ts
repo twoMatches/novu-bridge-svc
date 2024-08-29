@@ -1,5 +1,6 @@
 import { workflow } from "@novu/framework";
 import { invitationPayloadSchema } from "./schemas";
+import { renderInvitationEmail } from "../../emails/invitation-email";
 
 export const inAppInvitation = workflow(
   "in-app-invitation-notification",
@@ -11,6 +12,13 @@ export const inAppInvitation = workflow(
         coverImgSrc: payload.coverImgSrc,
         type: payload.type,
         invitationId: payload.invitationId,
+      };
+    });
+
+    await step.email("send-invitation-email", async () => {
+      return {
+        subject: payload.title,
+        body: renderInvitationEmail(payload),
       };
     });
   },
