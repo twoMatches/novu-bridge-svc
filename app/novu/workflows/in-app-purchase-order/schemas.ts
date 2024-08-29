@@ -1,14 +1,10 @@
 import { z } from "zod";
 
-export const salesPayloadSchema = z.object({
+export const purchaseOrderPayloadSchema = z.object({
   title: z.string(),
   description: z.string(),
   coverImgSrc: z.string().optional(),
-  type: z.union([
-    z.literal("INVOICE"),
-    z.literal("PURCHASE_ORDER"),
-    z.literal("AGREEMENT"),
-  ]),
+  type: z.string().default("PURCHASE_ORDER"),
   id: z.string(),
   preview: z.string(),
   fullName: z.string(),
@@ -16,5 +12,5 @@ export const salesPayloadSchema = z.object({
   salesPersonName: z.string(),
   companyProfileSrc: z.string(),
   companyName: z.string(),
-  href: z.string(),
+  purchaseOrderHref: z.string(),
 });

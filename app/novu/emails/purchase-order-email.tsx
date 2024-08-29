@@ -14,20 +14,19 @@ import {
   Tailwind,
   Text,
 } from "@react-email/components";
-import { SalesPayloadSchema } from "../workflows";
+import { PurchaseOrderPayloadSchema } from "../workflows";
 
-type SalesEmailProps = SalesPayloadSchema;
+type PurchaseOrderEmailProps = PurchaseOrderPayloadSchema;
 
-export const SalesEmail = ({
+export const PurchaseOrderEmail = ({
   preview,
   fullName,
   body,
   salesPersonName,
   companyName,
   companyProfileSrc,
-  href,
-  type,
-}: SalesEmailProps) => {
+  purchaseOrderHref,
+}: PurchaseOrderEmailProps) => {
   return (
     <Html>
       <Head>
@@ -71,7 +70,7 @@ export const SalesEmail = ({
               <Section className=" mt-10">
                 <Row>
                   <Column align="center">
-                    <Button className="bg-[#000000] rounded-[2px] text-white text-[14px] no-underline text-center px-8 py-3" href={href} >{type === "PURCHASE_ORDER" ? "View Purchase Order" : type === "AGREEMENT" ? "View Agreement" : "View Invoice"}</Button>
+                    <Button className="bg-[#000000] rounded-[2px] text-white text-[14px] no-underline text-center px-8 py-3" href={purchaseOrderHref} >View Purchase Order</Button>
                   </Column>
                 </Row>
               </Section>
@@ -105,8 +104,8 @@ export const SalesEmail = ({
   )
 }
 
-export default SalesEmail;
+export default PurchaseOrderEmail;
 
-export function renderSalesEmail(payload: SalesPayloadSchema) {
-  return render(<SalesEmail {...payload} />)
+export function renderPurchaseOrderEmail(payload: PurchaseOrderPayloadSchema) {
+  return render(<PurchaseOrderEmail {...payload} />)
 }

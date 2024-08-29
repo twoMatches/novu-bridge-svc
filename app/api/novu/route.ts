@@ -4,7 +4,7 @@ import {
   inAppInvitation,
   inAppProduct,
   inAppCatalog,
-  inAppSales,
+  inAppPurchaseOrder,
   invitationEmail,
 } from "../../novu/workflows";
 
@@ -15,7 +15,7 @@ export const { GET, POST, OPTIONS } = serve({
     inAppInvitation,
     inAppProduct,
     inAppCatalog,
-    inAppSales,
+    inAppPurchaseOrder,
     invitationEmail,
   ],
 });
