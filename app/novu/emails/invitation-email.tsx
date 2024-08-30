@@ -19,13 +19,19 @@ import { InvitationPayloadSchema } from "../workflows";
 type InvitationEmailProps = {
   subject: string;
   body: string;
-  ctaHref: string;
+  invitationHref: string;
+  fullName: string;
+  companyProfileSrc:string;
+  companyName:string;
 };
 
 export const InvitationEmail = ({
   subject,
   body,
-  ctaHref,
+  invitationHref,
+  fullName,
+  companyName,
+  companyProfileSrc
 }: InvitationEmailProps) => {
   return (
     <Html>
@@ -126,5 +132,12 @@ export const InvitationEmail = ({
 export default InvitationEmail;
 
 export function renderInvitationEmail(payload: InvitationPayloadSchema) {
-  return render(<InvitationEmail {...payload} />);
+  return render(<InvitationEmail 
+    subject={payload.title} 
+    body={payload.description}
+    invitationHref={payload.invitationHref}
+    fullName={payload.fullName}
+    companyName={payload.companyName}
+    companyProfileSrc={payload.companyProfileSrc}
+      />);
 }
