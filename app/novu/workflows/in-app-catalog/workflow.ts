@@ -1,5 +1,5 @@
 import { workflow } from "@novu/framework";
-import { catalogPayloadSchema } from './schemas';
+import { catalogPayloadSchema } from "./schemas";
 
 export const inAppCatalog = workflow(
   "in-app-catalog-notification",
@@ -10,7 +10,7 @@ export const inAppCatalog = workflow(
         body: payload.description,
         coverImgSrc: payload.coverImgSrc,
         type: payload.type,
-        catalogId: payload.catalogId,
+        ctaHref: payload.ctaHref,
       };
     });
   },
