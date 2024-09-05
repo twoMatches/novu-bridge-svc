@@ -10,7 +10,7 @@ export const inAppProduct = workflow(
         body: payload.description,
         coverImgSrc: payload.coverImgSrc,
         type: payload.type,
-        productId: payload.productId,
+        ctaHref: payload.ctaHref,
       };
     });
   },
