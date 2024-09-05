@@ -5,5 +5,5 @@ export const catalogPayloadSchema = z.object({
   description: z.string(),
   coverImgSrc: z.string().optional(),
   type: z.string().default("CATALOG"),
-  catalogId: z.string(),
+  ctaHref: z.string(),
 });
