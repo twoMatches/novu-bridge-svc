@@ -11,6 +11,7 @@ export const inAppPurchaseOrder = workflow(
         body: payload.description,
         coverImgSrc: payload.coverImgSrc,
         ctaHref: payload.ctaHref,
+        type: payload.type,
       };
     });
 
@@ -23,5 +24,5 @@ export const inAppPurchaseOrder = workflow(
   },
   {
     payloadSchema: purchaseOrderPayloadSchema,
-  },
+  }
 );
