@@ -21,8 +21,8 @@ type InvitationEmailProps = {
   body: string;
   invitationHref: string;
   fullName: string;
-  companyProfileSrc:string;
-  companyName:string;
+  companyProfileSrc?: string;
+  companyName: string;
 };
 
 export const InvitationEmail = ({
@@ -132,12 +132,12 @@ export const InvitationEmail = ({
 export default InvitationEmail;
 
 export function renderInvitationEmail(payload: InvitationPayloadSchema) {
-  return render(<InvitationEmail 
-    subject={payload.title} 
+  return render(<InvitationEmail
+    subject={payload.title}
     body={payload.description}
     invitationHref={payload.invitationHref}
     fullName={payload.fullName}
     companyName={payload.companyName}
-    companyProfileSrc={payload.companyProfileSrc}
-      />);
+    companyProfileSrc={payload.coverImgSrc}
+  />);
 }
